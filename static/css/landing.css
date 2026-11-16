@@ -1,0 +1,231 @@
+/* ------------------------------------------------------------------ */
+/* Landing hero (scoped "hz-" classes — does not affect other pages)   */
+/* ------------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..1000&display=swap');
+
+:root {
+    --hz-green: #45a876;
+    --hz-green-soft: #e9f5ee;
+    --hz-green-border: #cbe7d6;
+    --hz-ink: #1a1b1e;
+    --hz-muted: #666b71;
+    --hz-faint: #9a9da2;
+    --hz-red: #e05252;
+    --hz-yellow: #e9a23b;
+    --hz-blue: #4a87da;
+    --hz-purple: #8b70d6;
+    --hz-card-border: #eceae3;
+    --hz-radius: 14px;
+}
+
+/* Hero container */
+
+.hz-hero {
+    padding: 4rem 2rem 5rem;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hz-hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Badge pill */
+
+.hz-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--hz-green-soft);
+    border: 1px solid var(--hz-green-border);
+    color: #3e9166;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.55rem 1.25rem;
+    border-radius: 999px;
+    margin-bottom: 2.25rem;
+}
+
+.hz-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #3e9166;
+    flex-shrink: 0;
+}
+
+/* Headline */
+
+.hz-title {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: clamp(2.5rem, 5.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 1.75rem;
+}
+
+.hz-title-dark { color: var(--hz-ink); }
+.hz-title-green { color: var(--hz-green); }
+
+.hz-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--hz-muted);
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Buttons */
+
+.hz-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hz-btn {
+    display: inline-block;
+    background: var(--hz-ink);
+    color: #ffffff;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.95rem 2rem;
+    border-radius: 16px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.hz-btn:hover {
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+/* Browser-window mockup */
+
+.hz-visual {
+    margin-top: 4.5rem;
+}
+
+.hz-window {
+    background: #f2f0ea;
+    border: 1px solid var(--hz-card-border);
+    border-radius: 24px;
+    padding: 1.75rem;
+    text-align: left;
+}
+
+.hz-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hz-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.hz-dot-red { background: #e2857c; }
+.hz-dot-yellow { background: #edbd6e; }
+.hz-dot-green { background: #8fd0ab; }
+
+/* Stat cards */
+
+.hz-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.hz-stat {
+    background: #ffffff;
+    border: 1px solid var(--hz-card-border);
+    border-radius: var(--hz-radius);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.hz-stat-label {
+    font-size: 0.95rem;
+    color: var(--hz-faint);
+}
+
+.hz-stat-value {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--hz-ink);
+    line-height: 1.2;
+}
+
+.hz-stat-note {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.hz-note-red { color: var(--hz-red); }
+.hz-note-green { color: var(--hz-green); }
+.hz-note-gray { color: var(--hz-faint); }
+
+/* Category bars panel */
+
+.hz-panel {
+    background: #ffffff;
+    border: 1px solid var(--hz-card-border);
+    border-radius: var(--hz-radius);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.hz-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.hz-row-label {
+    width: 72px;
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    color: var(--hz-muted);
+}
+
+.hz-track {
+    flex: 1;
+    height: 8px;
+    background: #eeece5;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.hz-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.hz-fill-food { background: var(--hz-yellow); }
+.hz-fill-travel { background: var(--hz-blue); }
+.hz-fill-bills { background: var(--hz-purple); }
+
+/* Responsive */
+
+@media (max-width: 720px) {
+    .hz-hero { padding: 3rem 1.25rem 3.5rem; }
+    .hz-subtitle { font-size: 1.1rem; }
+    .hz-stats { grid-template-columns: 1fr; }
+    .hz-window { padding: 1.25rem; }
+    .hz-row-label { width: 56px; }
+}
