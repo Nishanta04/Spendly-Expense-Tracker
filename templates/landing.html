@@ -24,7 +24,7 @@
         </p>
         <div class="hz-actions">
             <a href="{{ url_for('register') }}" class="hz-btn hz-btn-dark">Create free account</a>
-            <a href="#features" class="hz-btn hz-btn-dark">See how it works</a>
+            <button type="button" class="hz-btn hz-btn-dark" id="hz-how-open">See how it works</button>
         </div>
     </div>
     <div class="hz-visual">
@@ -95,6 +95,24 @@
     </div>
 </section>
 
+<div class="hz-modal" id="hz-how-modal" aria-hidden="true">
+    <div class="hz-modal-backdrop" data-hz-close></div>
+    <div class="hz-modal-dialog" role="dialog" aria-modal="true" aria-label="How Spendly works">
+        <button type="button" class="hz-modal-close" data-hz-close aria-label="Close video">&times;</button>
+        <div class="hz-modal-video">
+            <iframe
+                id="hz-how-video"
+                src=""
+                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="How Spendly works"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+</div>
+
 <section class="cta-section">
     <div class="cta-inner">
         <h2 class="cta-title">Ready to take control?</h2>
@@ -103,4 +121,8 @@
     </div>
 </section>
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/landing.js') }}"></script>
 {% endblock %}

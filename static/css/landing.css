@@ -229,3 +229,77 @@
     .hz-window { padding: 1.25rem; }
     .hz-row-label { width: 56px; }
 }
+
+/* ------------------------------------------------------------------ */
+/* "See how it works" video modal                                      */
+/* ------------------------------------------------------------------ */
+
+.hz-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hz-modal.is-open { display: flex; }
+
+.hz-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.6);
+}
+
+.hz-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1rem;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.hz-modal-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.hz-modal-video iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hz-modal-close {
+    position: absolute;
+    top: -1.25rem;
+    right: -1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--hz-ink);
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.hz-modal-close:hover { background: #000000; }
+
+body.hz-no-scroll { overflow: hidden; }
+
+@media (max-width: 720px) {
+    .hz-modal { padding: 1rem; }
+    .hz-modal-close { top: -0.75rem; right: -0.25rem; }
+}
